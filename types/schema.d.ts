@@ -1,3 +1,4 @@
+
 interface iCreatePatient {
     patient: {
         fio: string
@@ -27,4 +28,15 @@ interface iCreatePatient {
       status_appointment: string
       payment: boolean
     }
+
+
+interface IReceptionLogin {
+  username: string;
+  email: string;
+  password: string;
+  phone_number: string;
+  first_name: string;
+  last_name: string;
+  role: string;
+}
 
