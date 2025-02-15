@@ -9,8 +9,19 @@ const api = index.injectEndpoints({
       }),
       providesTags: ["auth"],
     }),
+    registerReception: build.mutation<
+      AUTH.IRegisterReceptionResponse,
+      AUTH.IRegisterReceptionRequest
+    >({
+      query: (data) => ({
+        url: `/users/reception/`,
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["auth"],
+    }),
   }),
   overrideExisting: true,
 });
 
-export const { useGetUserQuery } = api;
+export const { useGetUserQuery, useRegisterReceptionMutation } = api;
