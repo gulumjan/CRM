@@ -1,4 +1,5 @@
 import React from "react";
+
 import Home from "./homeSections/Home";
 
 const HomePage = () => {
@@ -7,6 +8,7 @@ const HomePage = () => {
       <Home />
     </div>
   );
+
 };
 
 export default HomePage;
