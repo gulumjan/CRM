@@ -1,8 +1,14 @@
 import React from "react";
-import CreatePatient from "./createPatient/CreatePatient";
+
+import Home from "./homeSections/Home";
 
 const HomePage = () => {
-  return <div><CreatePatient/></div>;
+  return (
+    <div>
+      <Home />
+    </div>
+  );
+
 };
 
 export default HomePage;
