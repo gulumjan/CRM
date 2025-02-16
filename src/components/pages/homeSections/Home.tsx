@@ -1,9 +1,14 @@
+// src/components/pages/home/Home.tsx
 "use client";
-import { FC } from "react";
+import { FC, useState } from "react";
 import styles from "./Home.module.scss";
 import { FaUserMd, FaNotesMedical, FaUserInjured } from "react-icons/fa";
+import { Modal } from '@/ui/ModalPatient/Modal';
+import { CreatePatient } from '@/components/pages/createPatient/CreatePatient';
 
 const Home: FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className={styles.homepage}>
       <aside className={styles.sidebar}>
@@ -50,7 +55,9 @@ const Home: FC = () => {
         <section className={styles.patients}>
           <div className={styles.patientA}>
             <h2>Список пациентов</h2>
-            <button>Добавить пациентов</button>
+            <button onClick={() => setIsModalOpen(true)}>
+              Добавить пациентов
+            </button>
           </div>
           <table>
             <thead>
@@ -80,6 +87,10 @@ const Home: FC = () => {
             </tbody>
           </table>
         </section>
+
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <CreatePatient onClose={() => setIsModalOpen(false)} />
+        </Modal>
       </main>
     </div>
   );
