@@ -175,105 +175,104 @@ const EditingPatient: FC = () => {
                 </div>
               </div>
               <div className={scss.block3}>
-  <p>
-    Список услуг врача{" "}
-    <span style={{ fontWeight: "bold" }}>
-      Эшенкулова Алима Сыргаковна
-    </span>
-  </p>
-  <table className={scss.blueTable}>
-    <thead>
-      <tr>
-        <th>Выбрать</th>
-        <th>Наименование услуги</th>
-        <th>Код</th>
-        <th>Цена</th>
-        <th>Количество</th>
-        <th>Скидка</th>
-        <th>Сумма</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <input type="checkbox" />
-        </td>
-        <td>Приём врача-терапевта</td>
-        <td>1001</td>
-        <td>1500</td>
-        <td>
-          <input type="number" defaultValue={1} />
-        </td>
-        <td>
-          <input type="number" defaultValue={0} />
-        </td>
-        <td>1500</td>
-      </tr>
-      <tr>
-        <td>
-          <input type="checkbox" />
-        </td>
-        <td>Приём врача-хирурга</td>
-        <td>1002</td>
-        <td>2000</td>
-        <td>
-          <input type="number" defaultValue={1} />
-        </td>
-        <td>
-          <input type="number" defaultValue={0} />
-        </td>
-        <td>2000</td>
-      </tr>
-      <tr>
-        <td>
-          <input type="checkbox" />
-        </td>
-        <td>УЗИ брюшной полости</td>
-        <td>2001</td>
-        <td>2500</td>
-        <td>
-          <input type="number" defaultValue={1} />
-        </td>
-        <td>
-          <input type="number" defaultValue={0} />
-        </td>
-        <td>2500</td>
-      </tr>
-      <tr>
-        <td>
-          <input type="checkbox" />
-        </td>
-        <td>ЭКГ</td>
-        <td>3001</td>
-        <td>1200</td>
-        <td>
-          <input type="number" defaultValue={1} />
-        </td>
-        <td>
-          <input type="number" defaultValue={0} />
-        </td>
-        <td>1200</td>
-      </tr>
-      <tr>
-        <td>
-          <input type="checkbox" />
-        </td>
-        <td>Анализ крови (общий)</td>
-        <td>4001</td>
-        <td>600</td>
-        <td>
-          <input type="number" defaultValue={1} />
-        </td>
-        <td>
-          <input type="number" defaultValue={0} />
-        </td>
-        <td>600</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
+                <p>
+                  Список услуг врача{" "}
+                  <span style={{ fontWeight: "bold" }}>
+                    Эшенкулова Алима Сыргаковна
+                  </span>
+                </p>
+                <input type="text" placeholder="поиск услуг" />
+                <table className={scss.blueTable}>
+                  <thead>
+                    <tr>
+                      <th>Выбрать</th>
+                      <th>Наименование услуги</th>
+                      <th>Код</th>
+                      <th>Цена</th>
+                      <th>Количество</th>
+                      <th>Скидка</th>
+                      <th>Сумма</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input type="checkbox" />
+                      </td>
+                      <td>Приём врача-терапевта</td>
+                      <td>1001</td>
+                      <td>1500</td>
+                      <td>
+                        <input type="number" defaultValue={1} />
+                      </td>
+                      <td>
+                        <input type="number" defaultValue={0} />
+                      </td>
+                      <td>1500</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" />
+                      </td>
+                      <td>Приём врача-хирурга</td>
+                      <td>1002</td>
+                      <td>2000</td>
+                      <td>
+                        <input type="number" defaultValue={1} />
+                      </td>
+                      <td>
+                        <input type="number" defaultValue={0} />
+                      </td>
+                      <td>2000</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" />
+                      </td>
+                      <td>УЗИ брюшной полости</td>
+                      <td>2001</td>
+                      <td>2500</td>
+                      <td>
+                        <input type="number" defaultValue={1} />
+                      </td>
+                      <td>
+                        <input type="number" defaultValue={0} />
+                      </td>
+                      <td>2500</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" />
+                      </td>
+                      <td>ЭКГ</td>
+                      <td>3001</td>
+                      <td>1200</td>
+                      <td>
+                        <input type="number" defaultValue={1} />
+                      </td>
+                      <td>
+                        <input type="number" defaultValue={0} />
+                      </td>
+                      <td>1200</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" />
+                      </td>
+                      <td>Анализ крови (общий)</td>
+                      <td>4001</td>
+                      <td>600</td>
+                      <td>
+                        <input type="number" defaultValue={1} />
+                      </td>
+                      <td>
+                        <input type="number" defaultValue={0} />
+                      </td>
+                      <td>600</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
