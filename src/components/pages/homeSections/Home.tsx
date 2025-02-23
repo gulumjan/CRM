@@ -1,97 +1,100 @@
-// src/components/pages/home/Home.tsx
-"use client";
-import { FC, useState } from "react";
+import React, { useState } from "react";
+import { MoreVertical } from "lucide-react";
 import styles from "./Home.module.scss";
-import { FaUserMd, FaNotesMedical, FaUserInjured } from "react-icons/fa";
-import { Modal } from '@/ui/ModalPatient/Modal';
-import { CreatePatient } from '@/components/pages/createPatient/CreatePatient';
 
-const Home: FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const Home = () => {
+  const [selectedTab, setSelectedTab] = useState("Кардиология");
+
+  const tabs = [
+    "Кардиология",
+    "Терапия",
+    "Неврология",
+    "УЗИ",
+    "Рентген и КТ",
+    "Велоэргометрия (ВЭМ)",
+    "Допплерография сосудов",
+  ];
 
   return (
-    <div className={styles.homepage}>
-      <aside className={styles.sidebar}>
-        <h2>CRM Medicine</h2>
-        <nav>
-          <ul>
-            <li>🏠 Главная</li>
-            <li>📋 Записи</li>
-            <li>🩺 Врачи</li>
-            <li>📂 Пациенты</li>
-            <li>⚙️ Настройки</li>
-          </ul>
-        </nav>
-      </aside>
+    <div className={styles.patientList}>
+      <div className={styles.patientList__header}>
+        <h1>Все записи клиентов</h1>
+        <button className={styles.patientList__headerButton}>
+          <span>+</span> Добавить пациента
+        </button>
+      </div>
 
-      <main className={styles.main}>
-        <header className={styles.header}>
-          <h1>Главная</h1>
-          <div className={styles.user}>
-            <span>👤 Администратор</span>
-          </div>
-        </header>
+      <div className={styles.patientList__search}>
+        <input type="text" placeholder="Поиск" />
+        <select>
+          <option>Март 20, 2025</option>
+        </select>
+        <select>
+          <option>Врач: Елена</option>
+        </select>
+      </div>
 
-        <section className={styles.cards}>
-          <div className={styles.card}>
-            <FaUserMd size={30} />
-            <h3>Врачи</h3>
-            <p>24 врача</p>
-          </div>
+      <div className={styles.patientList__tabs}>
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            className={`${styles.patientList__tabsItem} ${
+              selectedTab === tab ? styles["patientList__tabsItem--active"] : ""
+            }`}
+            onClick={() => setSelectedTab(tab)}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
 
-          <div className={styles.card}>
-            <FaUserInjured size={30} />
-            <h3>Пациенты</h3>
-            <p>312 пациентов</p>
-          </div>
-
-          <div className={styles.card}>
-            <FaNotesMedical size={30} />
-            <h3>Записи</h3>
-            <p>58 записей</p>
-          </div>
-        </section>
-
-        <section className={styles.patients}>
-          <div className={styles.patientA}>
-            <h2>Список пациентов</h2>
-            <button onClick={() => setIsModalOpen(true)}>
-              Добавить пациентов
-            </button>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Имя</th>
-                <th>Возраст</th>
-                <th>Диагноз</th>
-                <th>Дата записи</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>#001</td>
-                <td>Иван Иванов</td>
-                <td>45</td>
-                <td>Грипп</td>
-                <td>12.02.2025</td>
-              </tr>
-              <tr>
-                <td>#002</td>
-                <td>Мария Смирнова</td>
-                <td>38</td>
-                <td>Мигрень</td>
-                <td>14.02.2025</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <CreatePatient onClose={() => setIsModalOpen(false)} />
-        </Modal>
-      </main>
+      <div className={styles.patientList__table}>
+        <table>
+          <thead>
+            <tr>
+              <th>Дата и время</th>
+              <th>Пациент</th>
+              <th>Врач</th>
+              <th>Способ оплаты</th>
+              <th>Сумма оплаты</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {Array(11)
+              .fill(null)
+              .map((_, index) => (
+                <tr key={index}>
+                  <td>Март 20, 12:09</td>
+                  <td>Иванов Иван</td>
+                  <td>Смирнова Елена</td>
+                  <td>
+                    <div className={styles.patientList__tablePayment}>
+                      <div
+                        className={`${
+                          styles.patientList__tablePaymentIndicator
+                        } ${
+                          index === 0 || index === 6
+                            ? styles["patientList__tablePaymentIndicator__card"]
+                            : styles["patientList__tablePaymentIndicator--cash"]
+                        }`}
+                      ></div>
+                      {index === 0 || index === 6
+                        ? "Безналичные (карта)"
+                        : "Наличные"}
+                    </div>
+                  </td>
+                  <td>5000₽</td>
+                  <td className={styles.patientList__tableActions}>
+                    <button>
+                      <MoreVertical size={20} />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
