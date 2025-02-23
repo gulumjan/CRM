@@ -7,11 +7,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 const LayoutClient: FC<LayoutProps> = ({ children }) => {
-  return (
-    <ReduxProvider>
-      <LayoutSite>{children}</LayoutSite>
-    </ReduxProvider>
-  );
+  return <ReduxProvider>{children}</ReduxProvider>;
 };
 
 export default LayoutClient;
