@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { MoreVertical } from "lucide-react";
 import styles from "./Home.module.scss";
+import { Modal } from "@/ui/ModalPatient/Modal";
+import { CreatePatient } from "../createPatient/CreatePatient";
 
 const Home = () => {
   const [selectedTab, setSelectedTab] = useState("Кардиология");
+  const [isOpen, setIsOpen] = useState(false);
 
   const tabs = [
     "Кардиология",
@@ -19,7 +22,10 @@ const Home = () => {
     <div className={styles.patientList}>
       <div className={styles.patientList__header}>
         <h1>Все записи клиентов</h1>
-        <button className={styles.patientList__headerButton}>
+        <button
+          onClick={() => setIsOpen(true)}
+          className={styles.patientList__headerButton}
+        >
           <span>+</span> Добавить пациента
         </button>
       </div>
@@ -95,6 +101,9 @@ const Home = () => {
           </tbody>
         </table>
       </div>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <CreatePatient onClose={() => setIsOpen(false)} />
+      </Modal>
     </div>
   );
 };
