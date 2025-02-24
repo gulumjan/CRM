@@ -1,0 +1,46 @@
+.HomeLog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-family: Caros Soft;
+      font-weight: 600;
+      font-size: 89.5px;
+      line-height: 110.27px;
+      letter-spacing: 0%;
+      color: rgba(38, 124, 220, 1);
+      font-family: Questrial;
+    }
+    h4 {
+      font-family: Caros Soft;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 44.35px;
+      letter-spacing: 0%;
+      text-align: center;
+      color: rgba(110, 110, 110, 1);
+      text-transform: uppercase;
+      padding: 28px 0;
+    }
+    button {
+      width: 617;
+      height: 59;
+
+      background: rgba(38, 124, 220, 1);
+      font-family: Caros Soft;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 33px;
+      letter-spacing: -1.9%;
+      color: rgba(255, 255, 255, 1);
+      border: none;
+      border-radius: 28px;
+    }
+  }
+}
