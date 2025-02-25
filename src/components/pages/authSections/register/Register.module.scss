@@ -1,97 +1,173 @@
 .Register {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   height: 100vh;
-  background-color: #f4f7fc;
-
-  .container {
-    width: 100%;
-    max-width: 400px;
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
 
   .content {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    gap: 98px;
 
-    h1 {
-      font-size: 22px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      gap: 15px;
-
-      .inputGroup {
-        width: 100%;
-
-        input,
-        select {
-          width: 100%;
-          padding: 12px;
-          border: 1px solid #ccc;
-          border-radius: 8px;
-          font-size: 16px;
-          transition: border-color 0.3s;
-
-          &:focus {
-            border-color: #007bff;
-            outline: none;
-          }
-        }
+    .login {
+      h1 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 20px;
       }
 
-      .passwordField {
+      form {
         display: flex;
-        align-items: center;
-        position: relative;
+        flex-direction: column;
+        width: 630px;
 
-        input {
+        gap: 15px;
+
+        .inputGroup {
           width: 100%;
-          padding: 12px;
-          border: 1px solid #ccc;
-          border-radius: 8px;
-          font-size: 16px;
-          padding-right: 40px;
+          display: flex;
+          align-items: center;
+          position: relative;
+
+          span {
+            position: absolute;
+            right: 602px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #555;
+
+            &:hover {
+              color: #007bff;
+            }
+          }
+          input,
+          select {
+            width: 100%;
+            padding: 12px 40px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+
+            &:focus {
+              border-color: #007bff;
+              outline: none;
+            }
+          }
         }
 
-        span {
-          position: absolute;
-          right: 12px;
+        .passwordField {
+          display: flex;
+          align-items: center;
+          position: relative;
+
+          input {
+            width: 100%;
+            padding: 12px 40px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            padding-right: 40px;
+          }
+
+          .pass {
+            position: absolute;
+            right: 12px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #555;
+
+            &:hover {
+              color: #007bff;
+            }
+          }
+          span {
+            position: absolute;
+            right: 602px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #555;
+
+            &:hover {
+              color: #007bff;
+            }
+          }
+        }
+
+        button {
+          width: 100%;
+          padding: 12px;
+          background: #007bff;
+          color: #ffffff;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: bold;
           cursor: pointer;
-          font-size: 20px;
-          color: #555;
+          transition: background 0.3s;
 
           &:hover {
-            color: #007bff;
+            background: #0056b3;
           }
         }
       }
+    }
+    .block {
+      background: linear-gradient(
+        565deg,
+        rgba(86, 164, 250, 1),
+        rgba(0, 90, 190, 1)
+      );
+      width: 841.5640116660225;
+      height: 841.5640116660225;
+      top: -346px;
+      left: 622.9px;
+      border-radius: 6.86px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
+      h1 {
+        font-family: Questrial;
+
+        font-weight: 600;
+        font-size: 64px;
+        line-height: 78.85px;
+        letter-spacing: 0%;
+        text-align: center;
+        color: rgba(255, 255, 255, 1);
+      }
+      p {
+        font-family: Questrial;
+
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29.57px;
+        letter-spacing: 0%;
+        text-align: center;
+        width: 600px;
+        color: rgba(255, 255, 255, 1);
+        padding: 22px 0;
+      }
       button {
-        width: 100%;
-        padding: 12px;
-        background: #007bff;
-        color: #ffffff;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background 0.3s;
+        font-family: Caros Soft;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 32.03px;
+        letter-spacing: 0%;
+        text-align: center;
+        width: 391;
+        height: 76;
+        border-radius: 100px;
+        border-width: 3px;
+        gap: 10px;
 
-        &:hover {
-          background: #0056b3;
-        }
+        border: 1px solid rgba(255, 255, 255, 1);
+        background: none;
+        color: rgba(255, 255, 255, 1);
+        font-family: Questrial;
       }
     }
   }

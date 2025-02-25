@@ -75,7 +75,7 @@
       border: none;
       padding: 8px 0;
 
-      &--active {
+      &:active {
         color: #2563eb;
 
         &::after {
@@ -102,11 +102,11 @@
     }
 
     th {
-      background-color: #f8fafc;
+      background-color: rgba(240, 240, 255, 1);
       padding: 1rem 1.5rem;
       text-align: left;
       font-weight: 500;
-      color: #4b5563;
+      color: #000;
     }
 
     td {
